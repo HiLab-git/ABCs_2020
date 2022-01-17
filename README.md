@@ -5,3 +5,5 @@ This repository provides source code for MICCAI 2020 Anatomical brainBarriers to
 Our method is based on [nnUNet][nnUNet_link], a self-adaptive segmentation method for medical images.
 
 <img src='./HMRnet.png'  width="1000">
+##Method overview
+Our solution coatriaons corse and fine stage
