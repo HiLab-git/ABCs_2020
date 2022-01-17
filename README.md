@@ -4,5 +4,4 @@
 This repository provides source code for MICCAI 2020 Anatomical brainBarriers to Cancer spread (ABCs) challenge. Method will be briefly introduced below, and our method won the 2nd place of [ABCs](ABCs_link).
 Our method is based on [nnUNet][nnUNet_link], a self-adaptive segmentation method for medical images.
 
-<img src='./framework.png'  width="800">
 <img src='./HMRnet.png'  width="800">
