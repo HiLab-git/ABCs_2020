@@ -1,17 +1,3 @@
-#    Copyright 2020 Division of Medical Image Computing, German Cancer Research Center (DKFZ), Heidelberg, Germany
-#
-#    Licensed under the Apache License, Version 2.0 (the "License");
-#    you may not use this file except in compliance with the License.
-#    You may obtain a copy of the License at
-#
-#        http://www.apache.org/licenses/LICENSE-2.0
-#
-#    Unless required by applicable law or agreed to in writing, software
-#    distributed under the License is distributed on an "AS IS" BASIS,
-#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#    See the License for the specific language governing permissions and
-#    limitations under the License. 
-
 
 from collections import OrderedDict
 from nnunet.network_architecture.generic_UNet import Generic_UNet
@@ -40,9 +26,6 @@ from batchgenerators.utilities.file_and_folder_operations import *
 
 
 class nnUNetTrainerV2(nnUNetTrainer):
-    """
-    Info for Fabian: same as internal nnUNetTrainerV2_2
-    """
 
     def __init__(self, plans_file, fold, output_folder=None, dataset_directory=None, batch_dice=True, stage=None,
                  unpack_data=True, deterministic=True, fp16=False):
@@ -56,15 +39,6 @@ class nnUNetTrainerV2(nnUNetTrainer):
         self.pin_memory = True
 
     def initialize(self, training=True, force_load_plans=False):
-        """
-        - replaced get_default_augmentation with get_moreDA_augmentation
-        - enforce to only run this code once
-        - loss function wrapper for deep supervision
-
-        :param training:
-        :param force_load_plans:
-        :return:
-        """
         if not self.was_initialized:
             maybe_mkdir_p(self.output_folder)
 
