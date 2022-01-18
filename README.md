@@ -39,7 +39,7 @@ nnUNet_plan_and_preprocess -t 001 --verify_dataset_integrity
 nnUNet_train 3d_fullres nnUNetTrainerV2  Task001_ABCs FOLD --npz
 ```
 ### Inference
-Run the following:
+Run the following command:
 ```bash
 nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t 001 -m 3d_fullres -f 4 -chk model_best 
 ```
