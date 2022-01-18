@@ -67,7 +67,7 @@ After extracting each organs, treated five types of organs as five tasks like `T
 To segment each organs, you need trian six models.
 For Cerebellum, Tentorium cerebelli and Ventricles, please set ` self.network = HMRNet_s(params) `  in  `nnunet/training/network_training/nnUNetTrainerV2.py`.
 For Falx cerebri, Sagittal brain sinus and Transverse brain sinus, please set `self.network = HMRNet_p(params)` in `nnunet/training/network_training/nnUNetTrainerV2.py`.
-
+In order to save unnecessary time, you can change self.max_num_epochs = 1000 to self.max_num_epochs = 400 in `nnUNet/nnunet/training/network_training/nnUNetTrainerV2.py`.
 * Dataset conversion and preprocess. Run:
 ```bash
 nnUNet_plan_and_preprocess -t TASK_name --verify_dataset_integrity
