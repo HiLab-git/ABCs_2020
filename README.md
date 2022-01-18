@@ -44,7 +44,9 @@ Run the following command:
 nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t 001 -m 3d_fullres -f 4 -chk model_best 
 ```
 
-
+# Fine stage
+First, you need to add the HMRNet into the nnUNet framework. 
+* Add `HMRNet_p.py` and `HMRNet_s.py` into the `/nnUNet/nnunet/network_architecture/`
 
 
 
