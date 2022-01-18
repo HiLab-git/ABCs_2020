@@ -32,7 +32,7 @@ export RESULTS_FOLDER="/home/jk/ABCS_data/result"
 
 * Run the following commands to prepare training and testing data for nnUNet. Note that the input of nnUNet has three channels.`python  ./HNRNet/data_process/creat_data_json.py`
 ### Training
-In the coarse stage, we only need the coarse location. In order to save unnecessary time, you can change `self.max_num_epochs = 1000` to `self.max_num_epochs = 45` in nnUNet/nnunet/training/network_training/nnUNetTrainerV2.py.
+In the coarse stage, we only need the coarse location. In order to save unnecessary time, you can change `self.max_num_epochs = 1000` to `self.max_num_epochs = 45` in `nnUNet/nnunet/training/network_training/nnUNetTrainerV2.py`.
 * Dataset conversion and preprocess. Run:
 ```bash
 nnUNet_plan_and_preprocess -t 001 --verify_dataset_integrity
