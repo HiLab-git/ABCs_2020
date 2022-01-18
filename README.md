@@ -63,8 +63,20 @@ python HMRNet/data_process/Organ3_to_two_part.py
 ```
 
 After extracting each organs, treated five types of organs as five tasks like `Task001_ABCs`, for example `Task002_ABCs_organ1,  Task003_ABCs_organ2 etc`. And put the corresponding into the bolders.
+## Training
+To segment each organs, you need trian six models.
+For Cerebellum, Tentorium cerebelli and Ventricles, please set ` self.network = HMRNet_s(params) `  in  `nnunet/training/network_training/nnUNetTrainerV2.py`.
+For Falx cerebri, Sagittal brain sinus and Transverse brain sinus, please set `self.network = HMRNet_p(params)` in `nnunet/training/network_training/nnUNetTrainerV2.py`.
 
-
+* Dataset conversion and preprocess. Run:
+```bash
+nnUNet_plan_and_preprocess -t TASK_name --verify_dataset_integrity
+```
+* Train 3D UNet. For FOLD in [0, 1, 2, 3, 4], run:
+```bash
+nnUNet_train 3d_fullres nnUNetTrainerV2  TASK_name FOLD --npz
+```
+`TASK_name is ` denotes the task_id of six sub-organs.
 
 
 
