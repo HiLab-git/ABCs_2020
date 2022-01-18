@@ -7,4 +7,4 @@ Our method is based on [nnUNet][nnUNet_link], a self-adaptive segmentation metho
 <img src='./HMRnet.png'  width="1100">
 
 # Method overview
-Our solution coatriaons corse and fine stage. We first use a localization model based on [nnUNet][nnUNet_link]to obtain a rough localization of different structures, and then use a High- and Multi-Resolution Network(HMRNet)  to  segment  each  structure  around  its  local  regionrespectively, where a Bidirectional Feature Calibration (BFC)block  is  introduced  for  better  interaction  between  features  inthe two branches
+Our solution coatriaons corse and fine stage. We first use a localization model based on [nnUNet][nnUNet_link] to obtain a rough localization of five structures (Falx cerebri, Tentorium cerebelli, Sagittal & transverse brain sinuses, Cerebellum, Ventricles), and then use a High- and Multi-Resolution Network(HMRNet)  to  segment  each  structure  around  its  local  regionrespectively, where a Bidirectional Feature Calibration (BFC)block  is  introduced  for  better  interaction  between  features  inthe two branches. 
