@@ -47,7 +47,12 @@ nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t 001 -m 3d_fullres -f 4 -chk m
 
 # Fine stage
 First, you need to add the HMRNet into the nnUNet framework. 
-* Add `HMRNet_p.py` and `HMRNet_s.py` into the `/nnUNet/nnunet/network_architecture/`
+* Add `HMRNet_p.py` and `HMRNet_s.py` into the `/nnUNet/nnunet/network_architecture/`.
+
+* Replace the `nnunet/training/loss_functions/dice_loss.py` with the file `HMRNet/HMRNet/dice_loss.py`.
+
+* Replace the `nnunet/training/network_training/nnUNetTrainerV2.py` with the file `HMRNet/HMRNet/nnUNetTrainerV2.py`.
+
 
 
 
