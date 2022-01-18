@@ -16,8 +16,8 @@ Our solution coatriaons corse and fine stage. We first use a localization model 
 ## Requirements
 This code depends on [Pytorch](https://pytorch.org) (You need at least version 1.6), [PyMIC][PyMIC_link] and [nnUNet][nnUNet_link]. To use nnUNet, Download [nnUNet][nnUNet_link], and put them in the `ProjectDir` such as `/home/jk/project/ABCs`. 
 
-## Usage
-First, install the nnUNet and set environmental variables as follows.
+## Environment variable
+Install the nnUNet and set environmental variables as follows.
 
 ```bash
 cd nnUNet
