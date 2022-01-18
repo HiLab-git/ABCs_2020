@@ -42,7 +42,7 @@ nnUNet_train 3d_fullres nnUNetTrainerV2  Task001_ABCs FOLD --npz
 ### Inference
 Run the following command:
 ```bash
-nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t 001 -m 3d_fullres -f 4 -chk model_best 
+nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t 001 -m 3d_fullres -f FOLD -chk model_best 
 ```
 
 # Fine stage
@@ -76,11 +76,23 @@ nnUNet_plan_and_preprocess -t TASK_name --verify_dataset_integrity
 ```bash
 nnUNet_train 3d_fullres nnUNetTrainerV2  TASK_name FOLD --npz
 ```
-`TASK_name is ` denotes the task_id of six sub-organs.
+`TASK_name` denotes the task_id of six sub-organs.
 
-
-
-
+### Inference
+To get the result of six model, run the following command respectively:
+```bash
+nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t TASK_name -m 3d_fullres -f FOLD -chk model_best 
+```
+### Postprocessing
+To merge   Sagittal brain sinu and Transverse brain sinus, run:
+```bash
+python HMRNet/data_process/Organ3_two_parts_fusion.py
+```
+To get the final segmentation result, you should pitch up the organ in succession. Run:
+```bash
+python HMRNet/data_process/Organs_fuse.py
+```
+(Attention:  you need to execute this command five times.)
 
 
 
