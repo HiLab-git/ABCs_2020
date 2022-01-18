@@ -15,7 +15,8 @@ This code depends on [Pytorch](https://pytorch.org) (You need at least version 1
 
 ## Usage
 First, install the nnUNet and set environmental variables as follows.
-'''bash 
+
+```bash
 cd nnUNet
 pip install -e .
 export nnUNet_raw_data_base="/home/jk/ABCS_data/Organ_all/nnUNet_raw_data_base"
