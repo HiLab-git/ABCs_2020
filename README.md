@@ -23,7 +23,6 @@ export nnUNet_raw_data_base="/home/jk/ABCS_data/nnUNet_raw_data_base"
 export nnUNet_preprocessed="/home/jk/ABCS_data/nnUNet_preprocessed"
 export RESULTS_FOLDER="/home/jk/ABCS_data/result"
 ```
-Then you need replace the origin 
 # Coarse stage
 ### Data preparation
 * Creat a path_dic for dataset ,  like`[ABCs_data_dir]="/home/jk/ABCS_data" `. Then dowload the dataset from [ABCs](ABCs_link) and put the dataset in the `ABCs_data_dir`, specifically, `ABCs_data_dir/nnUNet_raw_data/Task001_ABCs/imagesTr` for training images, `ABCs_data_dir/nnUNet_raw_data/Task001_ABCs/labelsTr` for training ground truth and `ABCs_data_dir/nnUNet_raw_data/Task001_ABCs/imagesTs` for test images. You can get more detailed guidance [here](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_conversion.md).
