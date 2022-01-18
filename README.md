@@ -25,7 +25,25 @@ export RESULTS_FOLDER="/home/jk/ABCS_data/Organ_all/result"
 ```
 Then you need replace the origin 
 # Coarse stage
-## Dataset and processing
 ### Data preparation
 * Creat a path_dic for dataset ,  like`[ABCs_data_dir]="/home/jk/ABCS_data" `. Then dowload the dataset from [ABCs](ABCs_link) and put the dataset in the `ABCs_data_dir`, specifically, `ABCs_data_dir/data_raw/imagesTr` for training images, `ABCs_data_dir/data_raw/labelsTr` for training ground truth and `ABCs_data_dir/data_raw/imagesTs` for test images. You can get more detailed guidance [here](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_conversion.md).
 * Run the following commands to prepare training and testing data for nnUNet. Note that the input of nnUNet has three channels.`python  ./HNRNet/data_process/creat_data_json.py`
+### Training
+In the coarse stage, we only need the coarse location. In order to save unnecessary time, you can change self.max_num_epochs = 1000 to self.max_num_epochs = 300 in nnUNet/nnunet/training/network_training/nnUNetTrainerV2.py.
+* Dataset conversion and preprocess. Run:
+```bash
+nnUNet_plan_and_preprocess -t 001 --verify_dataset_integrity
+* Train 3D UNet. For FOLD in [0, 1, 2, 3, 4], run:
+```bash
+nnUNet_train 3d_fullres nnUNetTrainerV2  Task001_ABCs FOLD --npz
+```
+### Inference
+
+
+
+
+
+
+
+
+
