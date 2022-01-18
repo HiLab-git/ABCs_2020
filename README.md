@@ -26,4 +26,4 @@ export RESULTS_FOLDER="/home/jk/ABCS_data/Organ_all/result"
 Then you need replace the origin 
 
 # Dataset and processing
-*Creat a path_dic for dataset ,  like`[ABCs_data_dir]="/home/jk/ABCS_data" . Then dowload the dataset from [ABCs 2020]([ABCs_link]:https://abcs.mgh.harvard.edu/) and put the dataset in the `ABCs_data_dir`, specifically, `ABCs_data_dir/data_raw/imagesTr` for training images, `ABCs_data_dir/data_raw/labelsTr` for training ground truth and `ABCs_data_dir/data_raw/imagesTs` for test images.
+*Creat a path_dic for dataset ,  like`[ABCs_data_dir]="/home/jk/ABCS_data" `. Then dowload the dataset from [ABCs 2020]([ABCs_link]:https://abcs.mgh.harvard.edu/) and put the dataset in the `ABCs_data_dir`, specifically, `ABCs_data_dir/data_raw/imagesTr` for training images, `ABCs_data_dir/data_raw/labelsTr` for training ground truth and `ABCs_data_dir/data_raw/imagesTs` for test images.
