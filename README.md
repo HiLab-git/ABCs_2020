@@ -33,6 +33,7 @@ In the coarse stage, we only need the coarse location. In order to save unnecess
 * Dataset conversion and preprocess. Run:
 ```bash
 nnUNet_plan_and_preprocess -t 001 --verify_dataset_integrity
+```
 * Train 3D UNet. For FOLD in [0, 1, 2, 3, 4], run:
 ```bash
 nnUNet_train 3d_fullres nnUNetTrainerV2  Task001_ABCs FOLD --npz
