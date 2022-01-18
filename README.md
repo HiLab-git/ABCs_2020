@@ -57,6 +57,11 @@ First, you need to add the HMRNet into the nnUNet framework.
 ```bash
 python HMRNet/data_process/Extract_class_and_crop.py
 ```
+* Especially, to get the  Sagittal brain sinu and Transverse brain sinus from Sagittal & transverse brain sinuses (organ3), run:
+```bash
+python HMRNet/data_process/Organ3_to_two_part.py
+```
+
 After extracting each organs, treated five types of organs as five tasks like `Task001_ABCs`, for example `Task002_ABCs_organ1,  Task003_ABCs_organ2 etc`. And put the corresponding into the bolders.
 
 
