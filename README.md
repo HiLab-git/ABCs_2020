@@ -64,7 +64,7 @@ python HMRNet/data_process/Extract_class_and_crop.py
 python HMRNet/data_process/Organ3_to_two_part.py
 ```
 
-After extracting each organs, treated five types of organs as five tasks like `Task001_ABCs`, for example `Task002_ABCs_organ1,  Task003_ABCs_organ2 etc`. And put the corresponding into the bolders.
+After extracting each organs, treated five types of organs as five tasks like `Task001_ABCs`, for example `Task002_ABCs_organ1,  Task003_ABCs_organ2` etc. And put the corresponding into the bolders.
 ## Training
 To segment each organs, you need trian six models.
 For Cerebellum, Tentorium cerebelli and Ventricles, please set ` self.network = HMRNet_s(params) `  in  `nnunet/training/network_training/nnUNetTrainerV2.py`.
