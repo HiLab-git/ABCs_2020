@@ -23,3 +23,4 @@ export nnUNet_raw_data_base="/home/jk/ABCS_data/Organ_all/nnUNet_raw_data_base"
 export nnUNet_preprocessed="/home/jk/ABCS_data/Organ_all/nnUNet_preprocessed"
 export RESULTS_FOLDER="/home/jk/ABCS_data/Organ_all/result"
 ```
+Then you need replace the origin 
