@@ -19,14 +19,14 @@ First, install the nnUNet and set environmental variables as follows.
 ```bash
 cd nnUNet
 pip install -e .
-export nnUNet_raw_data_base="/home/jk/ABCS_data/Organ_all/nnUNet_raw_data_base"
-export nnUNet_preprocessed="/home/jk/ABCS_data/Organ_all/nnUNet_preprocessed"
-export RESULTS_FOLDER="/home/jk/ABCS_data/Organ_all/result"
+export nnUNet_raw_data_base="/home/jk/ABCS_data/nnUNet_raw_data_base"
+export nnUNet_preprocessed="/home/jk/ABCS_data/nnUNet_preprocessed"
+export RESULTS_FOLDER="/home/jk/ABCS_data/result"
 ```
 Then you need replace the origin 
 # Coarse stage
 ### Data preparation
-* Creat a path_dic for dataset ,  like`[ABCs_data_dir]="/home/jk/ABCS_data" `. Then dowload the dataset from [ABCs](ABCs_link) and put the dataset in the `ABCs_data_dir`, specifically, `ABCs_data_dir/data_raw/imagesTr` for training images, `ABCs_data_dir/data_raw/labelsTr` for training ground truth and `ABCs_data_dir/data_raw/imagesTs` for test images. You can get more detailed guidance [here](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_conversion.md).
+* Creat a path_dic for dataset ,  like`[ABCs_data_dir]="/home/jk/ABCS_data" `. Then dowload the dataset from [ABCs](ABCs_link) and put the dataset in the `ABCs_data_dir`, specifically, `ABCs_data_dir/nnUNet_raw_data/Task001_ABCs/imagesTr` for training images, `ABCs_data_dir/nnUNet_raw_data/Task001_ABCs/labelsTr` for training ground truth and `ABCs_data_dir/nnUNet_raw_data/Task001_ABCs/imagesTs` for test images. You can get more detailed guidance [here](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_conversion.md).
 
 * Run the following commands to prepare training and testing data for nnUNet. Note that the input of nnUNet has three channels.`python  ./HNRNet/data_process/creat_data_json.py`
 ### Training
@@ -52,6 +52,15 @@ First, you need to add the HMRNet into the nnUNet framework.
 * Replace the `nnunet/training/loss_functions/dice_loss.py` with the file `HMRNet/HMRNet/dice_loss.py`.
 
 * Replace the `nnunet/training/network_training/nnUNetTrainerV2.py` with the file `HMRNet/HMRNet/nnUNetTrainerV2.py`.
+## Data preparation and processing
+* To separate each organ independently, run: 
+```bash
+python HMRNet/data_process/Extract_class_and_crop.py
+```
+After extracting each organs, treated five types of organs as five tasks like `Task001_ABCs`, for example `Task002_ABCs_organ1,  Task003_ABCs_organ2 etc`. And put the corresponding into the bolders.
+
+
+
 
 
 
